@@ -15,7 +15,7 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Angular';
 
-  isDisabled:boolean = false
+  isDisabled:any
   count = 0
 
   imgPath: string = "assets/Angular.jpg"

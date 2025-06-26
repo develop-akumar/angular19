@@ -4,7 +4,7 @@
 
 <h1 (drag)="updateValue(1)">I am h12</h1>
 
-<input type="text" [(ngModel)]="title" disabled="{{isDisabled}}">
+<input *ngIf="true" type="text" [(ngModel)]="title" disabled="{{isDisabled}}">
 <br><br>
 <input type="text" (keyup)="updateValue(1)" #aaa [value]="title" [disabled]="isDisabled">
 
@@ -34,15 +34,19 @@ Count - {{count}}
 
 <!-- older switch -->
 <div [ngSwitch]="isDisabled">
-  <p *ngSwitchCase = "true">true</p>
+  <p *ngSwitchCase = "true">true 1</p>
+  <p *ngSwitchCase = "true">true 2 </p>
   <p *ngSwitchCase = "false">false</p>
-  <p *ngSwitchDefault>Default</p>
+  <p *ngSwitchDefault>Default 1</p>
+  <p *ngSwitchDefault>Default 2</p>
 </div>
 
 
 @switch (isDisabled){
   @case (true) {<p>true value</p>}
   @case (false) {<p>false value</p>}
+
+  @default {<p>Default value</p>}
   @default {<p>Default value</p>}
 }
 
