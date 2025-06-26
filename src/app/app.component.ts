@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
@@ -6,6 +7,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [
     // RouterOutlet, 
+    CommonModule,
     FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -13,10 +15,17 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Angular';
 
-  isDisabled: boolean = false
+  isDisabled:boolean = false
   count = 0
 
   imgPath: string = "assets/Angular.jpg"
+
+  array = [
+    {id:1, name:"apple"},
+    {id:2, name:"mango"},
+    {id:3, name:"banana"},
+    {id:4, name:"watermelon"}
+  ]
 
   ngOnInit(): void {
 
@@ -42,5 +51,12 @@ export class AppComponent implements OnInit {
     console.log('event.key = ', event.key);
   }
 
+  trackByFunction(item:any){
+    return item.id
+  }
+
+  updateItem(){
+    this.array[1] = {id:2, name:"grapes"}
+  }
 
 }

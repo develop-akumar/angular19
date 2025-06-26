@@ -16,3 +16,35 @@ Count - {{count}}
 <button  (click)="updateValue(1)">Click me</button>
 <br>
 <input type="text" (keydown)="keypressed($event)">
+
+<br>
+
+<!-- older for-->
+<p *ngFor="let item of array; trackBy:trackByFunction"> {{ item.id + " " + item.name}}</p>
+
+<br>
+
+@for (item of array; track item.id){
+  <p>{{ item.id + " " + item.name}}</p>
+}@empty{
+  <p>No items found</p>
+}
+<br>
+<button  (click)="updateItem()">update list</button>
+
+<!-- older switch -->
+<div [ngSwitch]="isDisabled">
+  <p *ngSwitchCase = "true">true</p>
+  <p *ngSwitchCase = "false">false</p>
+  <p *ngSwitchDefault>Default</p>
+</div>
+
+
+@switch (isDisabled){
+  @case (true) {<p>true value</p>}
+  @case (false) {<p>false value</p>}
+  @default {<p>Default value</p>}
+}
+
+
+
