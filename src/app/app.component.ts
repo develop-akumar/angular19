@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
 
   imgPath: string = "assets/Angular.jpg"
 
+  myObject =  {id:1, name:"apple"}
+
   array = [
     {id:1, name:"apple"},
     {id:2, name:"mango"},
@@ -57,6 +59,10 @@ export class AppComponent implements OnInit {
 
   updateItem(){
     this.array[1] = {id:2, name:"grapes"}
+  }
+
+  add(){
+    return 2
   }
 
 }
