@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { ChildCompComponent } from './child-comp/child-comp.component';
+import { HighlightElementDirective } from './highlight-element.directive';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { ChildCompComponent } from './child-comp/child-comp.component';
     // RouterOutlet, 
     CommonModule,
     FormsModule,
-    ChildCompComponent
+    ChildCompComponent,
+    HighlightElementDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -73,7 +75,7 @@ export class AppComponent implements OnInit {
   }
 
   @ViewChild('wrapper') wrapper!:ElementRef
-  
+
 
   add() {
    
