@@ -8,4 +8,14 @@
     context:{ $implicit: myObject }">
 </ng-container>
 
+<button (click)="updateItem()">Update content</button>
+
+<app-child-comp #wrapper >
+  <h1 #showPara>{{mathValue}}</h1>
+</app-child-comp>
+
+<div #wrapper></div>
+
+
+
 
