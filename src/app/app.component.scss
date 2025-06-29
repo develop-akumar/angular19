@@ -1,10 +1,33 @@
-p{
+p {
     font-size: 1.5rem;
 }
 
-div{
-    border:2px solid black;
+div {
+    border: 2px solid black;
     border-radius: 25pc;
     text-align: center;
-    margin:0 auto
+    margin: 0 auto
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+table {
+    text-align: center;
+    width: 70%;
+    border-collapse: collapse;
+    
+
+}
+
+td,
+th {
+    padding: 8px;
+    font-size: 1.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+    
 }

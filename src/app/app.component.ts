@@ -21,6 +21,15 @@ import { HighlightElementDirective } from './highlight-element.directive';
 })
 export class AppComponent implements AfterViewInit {
 
+
+  array = [
+    {id:1, name:"arv1"},
+    {id:2, name:"arv2"},
+    {id:3, name:"arv3"},
+    {id:4, name:"arv4"},
+    {id:5, name:"arv5"}
+  ]
+
   @ViewChild('color') colorInput!: ElementRef
 
   // @HostBinding('style.backgroundColor') 
@@ -34,7 +43,7 @@ export class AppComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.selectedColor = this.colorInput.nativeElement.value
+    // this.selectedColor = this.colorInput.nativeElement.value
   }
 
 }

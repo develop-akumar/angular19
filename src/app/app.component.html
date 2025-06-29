@@ -1,3 +1,27 @@
+<table class="table-container">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(item of array; track item.id){
+    <tr>
+      <td>{{ item.id | currency : "USD"}}</td>
+      <td>{{ item.name | slice : 0: 1}}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+
+
+
+
+
+
 <div>
   <label for="colorInput">Select Color</label>&nbsp;
   <input type="color" name="colorInput" id="colorInput" #color>
@@ -5,7 +29,8 @@
 
 
 
-<div [style.backgroundColor]="selectedColor">  <h1>App Component</h1>
+<div [style.backgroundColor]="selectedColor">
+  <h1>App Component</h1>
   <p>
     Lorem ipsum
   </p>
