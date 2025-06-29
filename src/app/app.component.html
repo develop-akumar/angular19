@@ -1,24 +1,17 @@
-
-<ng-template #show let-msg>
-  {{msg.id}} - {{msg.name}}
-</ng-template>
-
-<ng-container *ngTemplateOutlet="
-    show; 
-    context:{ $implicit: myObject }">
-</ng-container>
-
-<button (click)="updateItem()">Update content</button>
-
-<app-child-comp #wrapper >
-  <h1 #showPara>{{mathValue}}</h1>
-</app-child-comp>
-
-<div appHighlightElement>
-
-  i I am host biknding directive
+<div>
+  <label for="colorInput">Select Color</label>&nbsp;
+  <input type="color" name="colorInput" id="colorInput" #color>
 </div>
 
 
 
+<div [style.backgroundColor]="selectedColor">  <h1>App Component</h1>
+  <p>
+    Lorem ipsum
+  </p>
+</div>
 
+<div>
+  <label for="colorInput1">Select Color</label>&nbsp;
+  <input type="color" name="colorInput1" id="colorInput1" #color1>
+</div>
