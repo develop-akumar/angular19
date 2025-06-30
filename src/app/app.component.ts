@@ -8,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 import { HighlightElementDirective } from './highlight-element.directive';
 import { AppendTextPipe } from './append-text.pipe';
+import { SortNumberPipe } from './pipes/sort-number.pipe';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { AppendTextPipe } from './append-text.pipe';
     // RouterOutlet, 
     CommonModule,
     FormsModule,
-    AppendTextPipe
+    AppendTextPipe,
+    SortNumberPipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -30,6 +32,8 @@ export class AppComponent implements AfterViewInit {
     { id: 4, name: "arv4" },
     { id: 5, name: "arv5" }
   ]
+
+  numberarray:number[] = [1,2,3,4,5]
 
   @ViewChild('color') colorInput!: ElementRef
 
