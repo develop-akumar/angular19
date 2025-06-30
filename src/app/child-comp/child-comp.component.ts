@@ -8,11 +8,10 @@ import { Component, ElementRef, ContentChild, AfterViewInit } from '@angular/cor
 })
 export class ChildCompComponent implements AfterViewInit {
 
-  @ContentChild('showPara') paraRef?: ElementRef
+  
 
   ngAfterViewInit() {
-    const content = this.paraRef?.nativeElement
-    content.style.color = "blue"
+    
   }
 
 }
