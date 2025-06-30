@@ -9,6 +9,7 @@ import { ChildCompComponent } from './child-comp/child-comp.component';
 import { HighlightElementDirective } from './highlight-element.directive';
 import { AppendTextPipe } from './append-text.pipe';
 import { SortNumberPipe } from './pipes/sort-number.pipe';
+import { LettercountPipe } from './pipes/lettercount.pipe';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { SortNumberPipe } from './pipes/sort-number.pipe';
     CommonModule,
     FormsModule,
     AppendTextPipe,
-    SortNumberPipe
+    SortNumberPipe,
+    LettercountPipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

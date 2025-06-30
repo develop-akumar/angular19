@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortNumberPipe implements PipeTransform {
 
-  transform(value: number[], order: string): number[] {
+  transform(value: number[], order: 'asc' | 'desc'): number[] {
     if (order === 'asc') {
       return value.sort((a, b) => a - b)
     }
