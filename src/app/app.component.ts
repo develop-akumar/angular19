@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 import { HighlightElementDirective } from './highlight-element.directive';
+import { AppendTextPipe } from './append-text.pipe';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { HighlightElementDirective } from './highlight-element.directive';
     // RouterOutlet, 
     CommonModule,
     FormsModule,
-
+    AppendTextPipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -23,11 +24,11 @@ export class AppComponent implements AfterViewInit {
 
 
   array = [
-    {id:1, name:"arv1"},
-    {id:2, name:"arv2"},
-    {id:3, name:"arv3"},
-    {id:4, name:"arv4"},
-    {id:5, name:"arv5"}
+    { id: 1, name: "arv1" },
+    { id: 2, name: "arv2" },
+    { id: 3, name: "arv3" },
+    { id: 4, name: "arv4" },
+    { id: 5, name: "arv5" }
   ]
 
   @ViewChild('color') colorInput!: ElementRef
