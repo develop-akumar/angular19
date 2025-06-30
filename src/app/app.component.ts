@@ -19,9 +19,9 @@ import { LettercountPipe } from './pipes/lettercount.pipe';
     FormsModule,
     RouterLink,
     // ChildCompComponent,
-    AppendTextPipe,
-    SortNumberPipe,
-    LettercountPipe
+    // AppendTextPipe,
+    // SortNumberPipe,
+    // LettercountPipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
