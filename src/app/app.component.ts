@@ -14,9 +14,10 @@ import { LettercountPipe } from './pipes/lettercount.pipe';
 @Component({
   selector: 'app-root',
   imports: [
-    // RouterOutlet, 
+    RouterOutlet, 
     CommonModule,
     FormsModule,
+    // ChildCompComponent,
     AppendTextPipe,
     SortNumberPipe,
     LettercountPipe
