@@ -10,12 +10,14 @@ import { Wc1Component } from './workChild/wc1/wc1.component';
 import { Wc2Component } from './workChild/wc2/wc2.component';
 import { NewsChild1Component } from './comp/newsChilds/news-child1/news-child1.component';
 import { NewsChild2Component } from './comp/newsChilds/news-child2/news-child2.component';
+import { TokenInjectionComponent } from './tokenInj/token-injection/token-injection.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
     { path: "home", component: BlankComponent },
     { path: "child", component: ChildCompComponent },
     { path: "about", component: AboutComponent },
+    { path: "tokenInj", component: TokenInjectionComponent },
     { path: "news", component: NewsComponent, 
         children:[
             {path:"newschild1", component:NewsChild1Component},
