@@ -4,7 +4,7 @@ import {
   AfterViewInit
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 import { HighlightElementDirective } from './highlight-element.directive';
 import { AppendTextPipe } from './append-text.pipe';
@@ -17,6 +17,7 @@ import { LettercountPipe } from './pipes/lettercount.pipe';
     RouterOutlet, 
     CommonModule,
     FormsModule,
+    RouterLink,
     // ChildCompComponent,
     AppendTextPipe,
     SortNumberPipe,
