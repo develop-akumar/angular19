@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'lettercount'
+  name: 'lettercount',
+  pure:true
 })
 export class LettercountPipe implements PipeTransform {
 
@@ -22,6 +23,7 @@ export class LettercountPipe implements PipeTransform {
 
 
     }
+    console.log('count = ', count);
     return count;
   }
 
