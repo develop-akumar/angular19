@@ -8,13 +8,20 @@ import { Comp404Component } from './other/comp404/comp404.component';
 import { BlankComponent } from './other/blank/blank.component';
 import { Wc1Component } from './workChild/wc1/wc1.component';
 import { Wc2Component } from './workChild/wc2/wc2.component';
+import { NewsChild1Component } from './comp/newsChilds/news-child1/news-child1.component';
+import { NewsChild2Component } from './comp/newsChilds/news-child2/news-child2.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
     { path: "home", component: BlankComponent },
     { path: "child", component: ChildCompComponent },
     { path: "about", component: AboutComponent },
-    { path: "news", component: NewsComponent },
+    { path: "news", component: NewsComponent, 
+        children:[
+            {path:"newschild1", component:NewsChild1Component},
+            {path:"newschild2", component:NewsChild2Component}
+        ] 
+    },
     { path: "work", component: WorkComponent, children:[
         {path:"wchild1/:id/:name", component:Wc1Component},
         {path:"wchild2", component:Wc2Component},
