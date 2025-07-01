@@ -16,7 +16,7 @@ export const routes: Routes = [
     { path: "about", component: AboutComponent },
     { path: "news", component: NewsComponent },
     { path: "work", component: WorkComponent, children:[
-        {path:"wchild1", component:Wc1Component},
+        {path:"wchild1/:id/:name", component:Wc1Component},
         {path:"wchild2", component:Wc2Component},
         { path: "**", component: Comp404Component }
     ] },
