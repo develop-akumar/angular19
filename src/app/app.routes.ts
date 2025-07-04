@@ -11,6 +11,7 @@ import { Wc2Component } from './workChild/wc2/wc2.component';
 import { NewsChild1Component } from './comp/newsChilds/news-child1/news-child1.component';
 import { NewsChild2Component } from './comp/newsChilds/news-child2/news-child2.component';
 import { TokenInjectionComponent } from './tokenInj/token-injection/token-injection.component';
+import { ObservableComponent } from './comp/observable/observable.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -29,5 +30,6 @@ export const routes: Routes = [
         {path:"wchild2", component:Wc2Component},
         { path: "**", component: Comp404Component }
     ] },
+    { path: "observable", component: ObservableComponent },
     { path: "**", component: Comp404Component },
 ];
