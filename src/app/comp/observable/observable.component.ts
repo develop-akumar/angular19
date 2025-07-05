@@ -9,25 +9,27 @@ import { Observable } from 'rxjs';
 })
 export class ObservableComponent {
 
-  constructor() {
-    const observable = new Observable((observer) => {
-      console.log('observable executed = ',);
-      observer.next("Hello")
-      observer.error("some error has occurred")
-      observer.next("Hello 2")
+  observable = new Observable((observer) => {
+    let count = 0;
+    let interval = setInterval(() => {
+      observer.next(++count)
+    }, 1000);
 
-      setTimeout(() => {
-        console.log('settimeout = ', );
-        observer.complete()
-      }, 2000);
-      console.log('Ram = ', );
-      
+    // cleanup function
+    return () => {
+      // clearInterval(interval)
+      // console.log('interval cleared = ',);
+    }
+  })
+
+  constructor() {
+    let obs = this.observable.subscribe({     // subscribing
+      next(value){console.log('value = ', value);}
     })
-      .subscribe({
-        next(value) { console.log('value = ', value)},
-        complete() { console.log('Observer is completed.'); },
-        error(err) { console.error(err);  },
-      })
+
+    setTimeout(() => {
+      obs.unsubscribe()   // unsubscribing
+    }, 5000);
 
 
 
