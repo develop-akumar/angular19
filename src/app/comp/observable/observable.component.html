@@ -1,1 +1,12 @@
 <p>observable works!</p>
+
+
+<div>
+
+    Value from Observable - {{ asyncObservable$ | async }}
+</div>
+
+
+<p *ngFor="let item of ngForObs$ | async">
+    Item - {{item}}
+</p>

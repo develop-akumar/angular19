@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable, Observer, Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-observable',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './observable.component.html',
   styleUrl: './observable.component.scss'
 })
-export class ObservableComponent {
+export class ObservableComponent implements OnInit {
 
   observable = new Observable((observer) => {
     let count = 0;
@@ -24,15 +25,43 @@ export class ObservableComponent {
 
   constructor() {
     let obs = this.observable.subscribe({     // subscribing
-      next(value){console.log('value = ', value);}
+      next(value) { console.log('value = ', value); }
     })
 
     setTimeout(() => {
       obs.unsubscribe()   // unsubscribing
     }, 5000);
-
-
-
   }
 
+
+  asyncObservable$: Observable<number> = new Observable((observer) => {
+    let count: number = 0
+    setInterval(() => {
+      observer.next(++count)
+      if (count == 5) {
+        observer.complete()
+      }
+    }, 1000);
+  })
+
+
+  ngForObs$: Observable<number[]> = new Observable<number[]>(
+    (observer: Observer<number[]>) => {
+      let arr: number[] = []
+      let count: number = 0
+      
+      let interval = setInterval(() => {
+        arr.push(++count)
+        observer.next(arr)
+
+        if (count >= 5) {
+          clearInterval(interval)
+        }
+      }, 1000);
+
+    })
+
+  ngOnInit(): void {
+
+  }
 }
