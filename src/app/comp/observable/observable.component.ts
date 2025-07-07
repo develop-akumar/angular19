@@ -49,7 +49,7 @@ export class ObservableComponent implements OnInit {
     (observer: Observer<number[]>) => {
       let arr: number[] = []
       let count: number = 0
-      
+
       let interval = setInterval(() => {
         arr.push(++count)
         observer.next(arr)
@@ -62,6 +62,20 @@ export class ObservableComponent implements OnInit {
     })
 
   ngOnInit(): void {
+
+    let obs$ = new Observable((observer) => {
+      observer.next(1)
+      observer.error("Some error occurred")
+      console.log(2)
+      observer.complete()
+      console.log(3)
+    }).subscribe({
+
+      next(value) { console.log(value) },
+      error(e) { console.log(e) },
+      complete() { console.log("complete") }
+    }
+    )
 
   }
 }
