@@ -6,6 +6,11 @@
     Value from Observable - {{ asyncObservable$ | async }}
 </div>
 
+<button routerLink="datafromapi">Data from API</button>
+
+
+<router-outlet></router-outlet>
+
 
 <p *ngFor="let item of ngForObs$ | async">
     Item - {{item}}

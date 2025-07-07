@@ -1,0 +1,11 @@
+<p>data-from-api works!</p>
+
+@if(jsonData$ | async; as data){
+    @for (category of data; track $index) {
+        <p>{{category}}</p>
+    }
+
+
+}@else {
+    <p>No data to display</p>
+}

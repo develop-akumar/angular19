@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Observer, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-observable',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, RouterLink,
+  ],
   templateUrl: './observable.component.html',
   styleUrl: './observable.component.scss'
 })
