@@ -18,6 +18,8 @@ import { FromComponent } from './comp/rxjsOperators/creationOperators/from/from.
 import { IntervalComponent } from './comp/rxjsOperators/creationOperators/interval/interval.component';
 import { TimerComponent } from './comp/rxjsOperators/creationOperators/timer/timer.component';
 import { EmptyComponent } from './comp/rxjsOperators/creationOperators/empty/empty.component';
+import { MapComponent } from './comp/rxjsOperators/pipeableOperators/map/map.component';
+import { FilterComponent } from './comp/rxjsOperators/pipeableOperators/filter/filter.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -48,6 +50,10 @@ export const routes: Routes = [
             { path: "interval", component: IntervalComponent },
             { path: "timer", component: TimerComponent },
             { path: "empty", component: EmptyComponent },
+
+
+            { path: "map", component: MapComponent },
+            { path: "filter", component: FilterComponent },
         ]
     },
     { path: "**", component: Comp404Component },
