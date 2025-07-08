@@ -17,6 +17,7 @@ import { OfComponent } from './comp/rxjsOperators/creationOperators/of/of.compon
 import { FromComponent } from './comp/rxjsOperators/creationOperators/from/from.component';
 import { IntervalComponent } from './comp/rxjsOperators/creationOperators/interval/interval.component';
 import { TimerComponent } from './comp/rxjsOperators/creationOperators/timer/timer.component';
+import { EmptyComponent } from './comp/rxjsOperators/creationOperators/empty/empty.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -46,6 +47,7 @@ export const routes: Routes = [
             { path: "from", component: FromComponent },
             { path: "interval", component: IntervalComponent },
             { path: "timer", component: TimerComponent },
+            { path: "empty", component: EmptyComponent },
         ]
     },
     { path: "**", component: Comp404Component },
