@@ -20,6 +20,7 @@ import { TimerComponent } from './comp/rxjsOperators/creationOperators/timer/tim
 import { EmptyComponent } from './comp/rxjsOperators/creationOperators/empty/empty.component';
 import { MapComponent } from './comp/rxjsOperators/pipeableOperators/map/map.component';
 import { FilterComponent } from './comp/rxjsOperators/pipeableOperators/filter/filter.component';
+import { FromeventComponent } from './comp/rxjsOperators/pipeableOperators/fromevent/fromevent.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -54,6 +55,7 @@ export const routes: Routes = [
 
             { path: "map", component: MapComponent },
             { path: "filter", component: FilterComponent },
+            { path: "fromevent", component: FromeventComponent },
         ]
     },
     { path: "**", component: Comp404Component },
