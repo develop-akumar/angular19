@@ -16,6 +16,7 @@ import { DataFromApiComponent } from './comp/observable2/data-from-api/data-from
 import { OfComponent } from './comp/rxjsOperators/creationOperators/of/of.component';
 import { FromComponent } from './comp/rxjsOperators/creationOperators/from/from.component';
 import { IntervalComponent } from './comp/rxjsOperators/creationOperators/interval/interval.component';
+import { TimerComponent } from './comp/rxjsOperators/creationOperators/timer/timer.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -44,6 +45,7 @@ export const routes: Routes = [
             { path: "of", component: OfComponent },
             { path: "from", component: FromComponent },
             { path: "interval", component: IntervalComponent },
+            { path: "timer", component: TimerComponent },
         ]
     },
     { path: "**", component: Comp404Component },
