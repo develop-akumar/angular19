@@ -14,6 +14,7 @@ import { TokenInjectionComponent } from './tokenInj/token-injection/token-inject
 import { ObservableComponent } from './comp/observable/observable.component';
 import { DataFromApiComponent } from './comp/observable2/data-from-api/data-from-api.component';
 import { OfComponent } from './comp/rxjsOperators/creationOperators/of/of.component';
+import { FromComponent } from './comp/rxjsOperators/creationOperators/from/from.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -40,6 +41,7 @@ export const routes: Routes = [
         path: "observable", component: ObservableComponent, children: [
             { path: "datafromapi", component: DataFromApiComponent },
             { path: "of", component: OfComponent },
+            { path: "from", component: FromComponent },
         ]
     },
     { path: "**", component: Comp404Component },
