@@ -20,20 +20,25 @@ export const routes: Routes = [
     { path: "child", component: ChildCompComponent },
     { path: "about", component: AboutComponent },
     { path: "tokenInj", component: TokenInjectionComponent },
-    { path: "news", component: NewsComponent, 
-        children:[
-            {path:"newschild1", component:NewsChild1Component},
-            {path:"newschild2", component:NewsChild2Component}
-        ] 
+    {
+        path: "news", component: NewsComponent,
+        children: [
+            { path: "newschild1", component: NewsChild1Component },
+            { path: "newschild2", component: NewsChild2Component }
+        ]
     },
-    { path: "work", component: WorkComponent, children:[
-        {path:"wchild1/:id/:name", component:Wc1Component},
-        {path:"wchild2", component:Wc2Component},
-        { path: "**", component: Comp404Component }
-    ] },
-    
-    { path: "observable", component: ObservableComponent, children : [
-        {path:"datafromapi", component: DataFromApiComponent}
-    ] },
+    {
+        path: "work", component: WorkComponent, children: [
+            { path: "wchild1/:id/:name", component: Wc1Component },
+            { path: "wchild2", component: Wc2Component },
+            { path: "**", component: Comp404Component }
+        ]
+    },
+
+    {
+        path: "observable", component: ObservableComponent, children: [
+            { path: "datafromapi", component: DataFromApiComponent }
+        ]
+    },
     { path: "**", component: Comp404Component },
 ];

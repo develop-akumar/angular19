@@ -20,7 +20,7 @@ export class ObservableComponent implements OnInit {
 
     // cleanup function
     return () => {
-      // clearInterval(interval)
+      clearInterval(interval)
       // console.log('interval cleared = ',);
     }
   })
@@ -58,10 +58,12 @@ export class ObservableComponent implements OnInit {
 
         if (count >= 5) {
           clearInterval(interval)
+          observer.complete()
         }
       }, 1000);
 
-    })
+    }
+  )
 
   ngOnInit(): void {
 
@@ -71,6 +73,10 @@ export class ObservableComponent implements OnInit {
       console.log(2)
       observer.complete()
       console.log(3)
+
+      setTimeout(() => {
+        observer.complete()
+      }, 2000)
     }).subscribe({
 
       next(value) { console.log(value) },
