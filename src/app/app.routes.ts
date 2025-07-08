@@ -13,6 +13,7 @@ import { NewsChild2Component } from './comp/newsChilds/news-child2/news-child2.c
 import { TokenInjectionComponent } from './tokenInj/token-injection/token-injection.component';
 import { ObservableComponent } from './comp/observable/observable.component';
 import { DataFromApiComponent } from './comp/observable2/data-from-api/data-from-api.component';
+import { OfComponent } from './comp/rxjsOperators/creationOperators/of/of.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -37,7 +38,8 @@ export const routes: Routes = [
 
     {
         path: "observable", component: ObservableComponent, children: [
-            { path: "datafromapi", component: DataFromApiComponent }
+            { path: "datafromapi", component: DataFromApiComponent },
+            { path: "of", component: OfComponent },
         ]
     },
     { path: "**", component: Comp404Component },

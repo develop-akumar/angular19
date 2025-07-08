@@ -1,17 +1,18 @@
 <p>observable works!</p>
 
-
+<!-- 
 <div>
 
     Value from Observable - {{ asyncObservable$ | async }}
-</div>
+</div> -->
 
 <button routerLink="datafromapi">Data from API</button>
+<button routerLink="of">of</button>
 
 
 <router-outlet></router-outlet>
 
-
+<!-- 
 <p *ngFor="let item of ngForObs$ | async">
     Item - {{item}}
 </p>
@@ -19,4 +20,4 @@
 @for(item of ngForObs$ | async; track $index){
 
     <p>Item No. - {{item}}</p>
-}
+} -->
