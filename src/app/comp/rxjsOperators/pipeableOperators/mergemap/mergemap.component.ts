@@ -13,10 +13,11 @@ export class MergemapComponent implements OnInit, AfterViewInit {
   outer = of(1, 2, 3, 4, 5, 6)
   inner = (val: number) => of(val * 2)
   final = this.outer.pipe(
-    mergeMap(this.inner)
+    mergeMap(this.inner, 1)
   )
 
   constructor() {
+    console.clear();
     this.final.subscribe((res) => {
       console.log('res = ', res);
     })
@@ -65,13 +66,14 @@ export class MergemapComponent implements OnInit, AfterViewInit {
   user$ = from(this.user)
   
   ngOnInit(): void {
+    
     this.user$.pipe(
       mergeMap((user:any)=>{
         const result = this.course.filter((c)=>c.courseId == user.userId);
         return of({user, course : result})
       })
     ).subscribe((res)=>{
-    console.log('res = ', res);
+    console.log('user = ', res);
     })
   }
 
