@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
 import { of, delay, fromEvent, exhaustMap } from 'rxjs';
 
@@ -9,9 +10,17 @@ import { of, delay, fromEvent, exhaustMap } from 'rxjs';
 })
 export class ExhaustmapComponent implements AfterViewInit {
 
+  constructor(private http : HttpClient){
+
+  }
   @ViewChild("myBtn", { static: false }) button!: ElementRef
 
   ngAfterViewInit(): void {
+
+    this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+      .subscribe((response) => {
+        console.log('API Got Hit = ');
+      })
 
     const clicks$ = fromEvent(this.button.nativeElement, 'click');
     console.log('this.button.nativeElement = ', this.button.nativeElement);
