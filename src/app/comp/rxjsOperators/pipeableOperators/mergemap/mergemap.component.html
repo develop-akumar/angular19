@@ -1,0 +1,12 @@
+<p>mergemap works!</p>
+
+<div style="padding: 20px;">
+  <button id="loadUserBtn">Load Random User</button>
+
+  <h3>Loaded Users:</h3>
+  <ul>
+    <li *ngFor="let user of userData">
+      ID: {{ user.id }}, Name: {{ user.name }}
+    </li>
+  </ul>
+</div>
