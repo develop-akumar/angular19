@@ -24,6 +24,7 @@ import { FilterComponent } from './comp/rxjsOperators/pipeableOperators/filter/f
 import { FromeventComponent } from './comp/rxjsOperators/pipeableOperators/fromevent/fromevent.component';
 import { MergemapComponent } from './comp/rxjsOperators/pipeableOperators/mergemap/mergemap.component';
 import { ConcatmapComponent } from './comp/rxjsOperators/pipeableOperators/concatmap/concatmap.component';
+import { SwitchmapComponent } from './comp/rxjsOperators/pipeableOperators/switchmap/switchmap.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -61,6 +62,7 @@ export const routes: Routes = [
             { path: "fromevent", component: FromeventComponent },
             { path: "mergemap", component: MergemapComponent },
             { path: "concatmap", component: ConcatmapComponent },
+            { path: "switchmap", component: SwitchmapComponent },
         ]
     },
     { path: "**", component: Comp404Component },
