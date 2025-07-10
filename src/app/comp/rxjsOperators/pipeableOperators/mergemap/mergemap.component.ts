@@ -10,6 +10,7 @@ import { map, mergeMap, of, fromEvent, delay, from } from 'rxjs';
 })
 export class MergemapComponent implements OnInit, AfterViewInit {
 
+  // First use case ---------------------------------------------------
   outer = of(1, 2, 3, 4, 5, 6)
   inner = (val: number) => of(val * 2)
   final = this.outer.pipe(
@@ -51,29 +52,29 @@ export class MergemapComponent implements OnInit, AfterViewInit {
 
   //-- Third Example ------------------------------------------------------
   user = [
-    {userId:1},
-    {userId:2},
-    {userId:3}
+    { userId: 1 },
+    { userId: 2 },
+    { userId: 3 }
   ]
 
   course = [
-    {courseId:1, cName:"Java"},
-    {courseId:2, cName:"Python"},
-    {courseId:3, cName:"Javascript"},
-    {courseId:4, cName:"Go"}
+    { courseId: 1, cName: "Java" },
+    { courseId: 2, cName: "Python" },
+    { courseId: 3, cName: "Javascript" },
+    { courseId: 4, cName: "Go" }
   ]
 
   user$ = from(this.user)
-  
+
   ngOnInit(): void {
-    
+
     this.user$.pipe(
-      mergeMap((user:any)=>{
-        const result = this.course.filter((c)=>c.courseId == user.userId);
-        return of({user, course : result})
+      mergeMap((user: any) => {
+        const result = this.course.filter((c) => c.courseId == user.userId);
+        return of({ user, course: result })
       })
-    ).subscribe((res)=>{
-    console.log('user = ', res);
+    ).subscribe((res) => {
+      console.log('user = ', res);
     })
   }
 
