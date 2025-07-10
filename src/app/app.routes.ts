@@ -28,6 +28,7 @@ import { SwitchmapComponent } from './comp/rxjsOperators/pipeableOperators/switc
 import { ExhaustmapComponent } from './comp/rxjsOperators/pipeableOperators/exhaustmap/exhaustmap.component';
 import { SignalComponent } from './comp/Signals/signal/signal.component';
 import { CreationComponent } from './comp/Signals/creation/creation.component';
+import { TodoListComponent } from './comp/Signals/todo-list/todo-list.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -75,6 +76,7 @@ export const routes: Routes = [
         path: "signal", component: SignalComponent, children: 
         [
             { path: "creation", component: CreationComponent },
+            { path: "todolist", component: TodoListComponent },
         ]
     },
     { path: "**", component: Comp404Component },

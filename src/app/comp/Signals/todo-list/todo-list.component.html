@@ -1,0 +1,22 @@
+<p>todo-list works!</p>
+
+<div>
+    <input type="text" [(ngModel)]="textValue" placeholder="Enter todo item" />
+    <br>
+    <button (click)="add()">Add</button>
+
+</div>
+
+<div>
+    <ul>
+        @for(item of todoList(); track $index){
+
+        <li><span>{{$index}}  {{item}}</span> &nbsp; &nbsp;
+            <button (click)="delete($index)">Remove</button>
+        </li>
+
+        }@empty{
+        <li>No items in the list</li>
+        }
+    </ul>
+</div>
