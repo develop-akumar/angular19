@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+button{
+    background-color: aquamarine;
+    color: brown;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+button:hover{
+    background-color: brown;
+    color: aquamarine;
+    cursor: pointer;
+}/* You can add global styles to this file, and also import other style files */

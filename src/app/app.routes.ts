@@ -26,6 +26,8 @@ import { MergemapComponent } from './comp/rxjsOperators/pipeableOperators/mergem
 import { ConcatmapComponent } from './comp/rxjsOperators/pipeableOperators/concatmap/concatmap.component';
 import { SwitchmapComponent } from './comp/rxjsOperators/pipeableOperators/switchmap/switchmap.component';
 import { ExhaustmapComponent } from './comp/rxjsOperators/pipeableOperators/exhaustmap/exhaustmap.component';
+import { SignalComponent } from './comp/Signals/signal/signal.component';
+import { CreationComponent } from './comp/Signals/creation/creation.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -65,6 +67,14 @@ export const routes: Routes = [
             { path: "concatmap", component: ConcatmapComponent },
             { path: "switchmap", component: SwitchmapComponent },
             { path: "exhaustmap", component: ExhaustmapComponent },
+        ]
+    },
+
+    // Signal
+    {
+        path: "signal", component: SignalComponent, children: 
+        [
+            { path: "creation", component: CreationComponent },
         ]
     },
     { path: "**", component: Comp404Component },
