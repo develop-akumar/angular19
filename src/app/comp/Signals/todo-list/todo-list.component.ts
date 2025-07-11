@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, WritableSignal, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, WritableSignal, AfterViewInit, OnInit, OnDestroy,
+  HostListener
+ } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -51,8 +53,8 @@ export class TodoListComponent implements AfterViewInit, OnInit, OnDestroy {
     let button = document.getElementById("btn")
 
     if (button) {
-      document.addEventListener("keydown", (event) => {
-        console.log('shortcut = ', );
+      button.addEventListener("keydown", (event) => {
+        console.log('shortcut = ',);
         if (event.altKey && event.key === "a") {
           this.add2()
         }
@@ -78,6 +80,14 @@ export class TodoListComponent implements AfterViewInit, OnInit, OnDestroy {
         this.add2()
       }
     }); 
+  }
+
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.altKey && event.key === 'a') {
+      console.log('Alt + A pressed globally!');
+    }
   }
 
 
