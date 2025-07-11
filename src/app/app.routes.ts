@@ -30,6 +30,7 @@ import { SignalComponent } from './comp/Signals/signal/signal.component';
 import { CreationComponent } from './comp/Signals/creation/creation.component';
 import { TodoListComponent } from './comp/Signals/todo-list/todo-list.component';
 import { ComputedSignalsComponent } from './comp/Signals/computed-signals/computed-signals.component';
+import { EffectSignalsComponent } from './comp/Signals/effect-signals/effect-signals.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -79,6 +80,7 @@ export const routes: Routes = [
             { path: "creation", component: CreationComponent },
             { path: "todolist", component: TodoListComponent },
             { path: "computedsignals", component: ComputedSignalsComponent },
+            { path: "effectsignals", component: EffectSignalsComponent },
         ]
     },
     { path: "**", component: Comp404Component },
