@@ -1,9 +1,9 @@
 <p>todo-list works!</p>
 
 <div>
-    <input type="text" [(ngModel)]="textValue" placeholder="Enter todo item" />
+    <input type="text" [(ngModel)]="textValue" placeholder="Enter todo item" id="addtext" #text />
     <br>
-    <button (click)="add()">Add</button>
+    <button (click)="add(text)" id="btn">Add</button>
 
 </div>
 
@@ -11,11 +11,12 @@
     <ul>
         @for(item of todoList(); track $index){
 
-        <li><span>{{$index}}  {{item}}</span> &nbsp; &nbsp;
+        <li><span>{{$index}} {{item}}</span> &nbsp; &nbsp;
             <button (click)="delete($index)">Remove</button>
         </li>
 
-        }@empty{
+        }
+        @empty{
         <li>No items in the list</li>
         }
     </ul>
