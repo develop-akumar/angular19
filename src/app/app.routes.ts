@@ -32,6 +32,7 @@ import { TodoListComponent } from './comp/Signals/todo-list/todo-list.component'
 import { ComputedSignalsComponent } from './comp/Signals/computed-signals/computed-signals.component';
 import { EffectSignalsComponent } from './comp/Signals/effect-signals/effect-signals.component';
 import { UntrackSignalsComponent } from './comp/Signals/untrack-signals/untrack-signals.component';
+import { CartsignalComponent } from './comp/Signals/cartsignal/cartsignal.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -83,6 +84,7 @@ export const routes: Routes = [
             { path: "computedsignals", component: ComputedSignalsComponent },
             { path: "effectsignals", component: EffectSignalsComponent },
             { path: "untracksignals", component: UntrackSignalsComponent },
+            { path: "cartsignals", component: CartsignalComponent },
         ]
     },
     { path: "**", component: Comp404Component },

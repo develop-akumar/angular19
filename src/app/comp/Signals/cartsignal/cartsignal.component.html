@@ -1,0 +1,30 @@
+<p>cartsignal works!</p>
+
+
+<div>
+    <h2>Form</h2>
+    <form (ngSubmit)="add()" action="">
+        <div>
+            <input type="text" name="a" id="" [(ngModel)]="itemname" >
+        </div>
+
+        <div>
+            <input type="number" name="b" id="" [(ngModel)]="price" >
+        </div>
+        <div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <h2>Cart</h2>
+    <ul>
+        @for(item of itemList();track $index){
+            <li>Name : {{item.name}}, Price : {{item.price}} <button (click)="remove($index)" >Remove</button></li>
+        }
+
+        <h3>Total : {{total()}}</h3>
+        
+    </ul>
+</div>
