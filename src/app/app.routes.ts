@@ -33,6 +33,7 @@ import { ComputedSignalsComponent } from './comp/Signals/computed-signals/comput
 import { EffectSignalsComponent } from './comp/Signals/effect-signals/effect-signals.component';
 import { UntrackSignalsComponent } from './comp/Signals/untrack-signals/untrack-signals.component';
 import { CartsignalComponent } from './comp/Signals/cartsignal/cartsignal.component';
+import { LinkedSignalComponent } from './comp/Signals/linked-signal/linked-signal.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -85,6 +86,7 @@ export const routes: Routes = [
             { path: "effectsignals", component: EffectSignalsComponent },
             { path: "untracksignals", component: UntrackSignalsComponent },
             { path: "cartsignals", component: CartsignalComponent },
+            { path: "linkedsignals", component: LinkedSignalComponent },
         ]
     },
     { path: "**", component: Comp404Component },
