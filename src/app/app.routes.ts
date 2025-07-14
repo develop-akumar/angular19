@@ -35,6 +35,7 @@ import { UntrackSignalsComponent } from './comp/Signals/untrack-signals/untrack-
 import { CartsignalComponent } from './comp/Signals/cartsignal/cartsignal.component';
 import { LinkedSignalComponent } from './comp/Signals/linked-signal/linked-signal.component';
 import { ConvtObsToSignalComponent } from './comp/Signals/convt-obs-to-signal/convt-obs-to-signal.component';
+import { Task2SignalComponent } from './comp/Signals/task2-signal/task2-signal.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -89,6 +90,7 @@ export const routes: Routes = [
             { path: "cartsignals", component: CartsignalComponent },
             { path: "linkedsignals", component: LinkedSignalComponent },
             { path: "obstosignal", component: ConvtObsToSignalComponent },
+            { path: "task2", component: Task2SignalComponent },
         ]
     },
     { path: "**", component: Comp404Component },

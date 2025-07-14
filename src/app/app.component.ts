@@ -46,7 +46,7 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('input', ['$event.target.value'])
   onColorChange(color: string) {
-    console.log('color = ', color);
+    // console.log('color = ', color);
     this.selectedColor = color
   }
 
