@@ -11,7 +11,7 @@
         <br>
         <div>
             <label for="search">Search text</label> :   
-            <input name="search" type="text" placeholder="Enter search ..." (input)="onSearchText()" [(ngModel)]="searchText">
+            <input name="search" type="text" placeholder="Enter search ..." (input)="onSearchText($event)" [(ngModel)]="searchText">
         </div>
     </section>
 

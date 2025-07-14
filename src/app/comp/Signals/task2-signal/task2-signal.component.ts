@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms'
 })
 export class Task2SignalComponent {
 
-  allItems!: Array<any>
+  allItems: Array<any> = []
   searchText: WritableSignal<string> = signal("")
   filteredItems:WritableSignal<Array<any>> = linkedSignal<string, Array<any>>({
     source: this.searchText,
@@ -42,6 +42,7 @@ export class Task2SignalComponent {
         this.categories = [...new Set(res.map((e: any) => e.category))]
         this.categories.unshift("All")
         console.log('this.categories = ', this.categories);
+        this.filteredItems.set(this.allItems)
       },
       error: (e) => console.log('error = ', e)
     })
@@ -59,17 +60,17 @@ export class Task2SignalComponent {
     this.searchText.set("")
   }
 
-  onSearchText() {
-    this.searchText
+  onSearchText(e:any) {
+    this.searchText.set(e.target.value)
 
-    this.filteredItems = this.allItems.filter((prod) => {
+    // this.filteredItems.set() = this.allItems.filter((prod) => {
 
-      if (this.selectedCategory == "All") {
-        return prod.title.toLowerCase().includes(this.searchText.toLowerCase())
-      }
-      return prod.category == this.selectedCategory && prod.title.toLowerCase().includes(this.searchText.toLowerCase())
-    }
-    )
+    //   if (this.selectedCategory == "All") {
+    //     return prod.title.toLowerCase().includes(this.searchText.toLowerCase())
+    //   }
+    //   return prod.category == this.selectedCategory && prod.title.toLowerCase().includes(this.searchText.toLowerCase())
+    // }
+    // )
   }
 
 
