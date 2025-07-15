@@ -38,6 +38,7 @@ import { ConvtObsToSignalComponent } from './comp/Signals/convt-obs-to-signal/co
 import { Task2SignalComponent } from './comp/Signals/task2-signal/task2-signal.component';
 import { ChangeMainComponent } from './comp/changeDetection/change-main/change-main.component';
 import { OnPushStrategyComponent } from './comp/changeDetection/on-push-strategy/on-push-strategy.component';
+import { CDRefComponent } from './comp/changeDetection/cdref/cdref.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -98,6 +99,7 @@ export const routes: Routes = [
     {
         path:"changeDetection", component: ChangeMainComponent, children: [
             {path:"onpushstrategy", component:OnPushStrategyComponent},
+            {path:"cdref", component:CDRefComponent},
         ]
     },
     { path: "**", component: Comp404Component },
