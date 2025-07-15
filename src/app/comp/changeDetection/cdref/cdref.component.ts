@@ -16,7 +16,7 @@ export class CDRefComponent implements OnInit {
 
   ngOnInit(){
     // Initial change detection
-    this.CDRef.detectChanges();
+    this.CDRef.markForCheck();
 
     // Simulate a change after 2 seconds
     setTimeout(() => {
