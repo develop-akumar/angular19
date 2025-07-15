@@ -83,24 +83,29 @@ export const routes: Routes = [
 
     // Signal
     {
-        path: "signal", component: SignalComponent, children: 
-        [
-            { path: "creation", component: CreationComponent },
-            { path: "todolist", component: TodoListComponent },
-            { path: "computedsignals", component: ComputedSignalsComponent },
-            { path: "effectsignals", component: EffectSignalsComponent },
-            { path: "untracksignals", component: UntrackSignalsComponent },
-            { path: "cartsignals", component: CartsignalComponent },
-            { path: "linkedsignals", component: LinkedSignalComponent },
-            { path: "obstosignal", component: ConvtObsToSignalComponent },
-            { path: "task2", component: Task2SignalComponent },
+        path: "signal", component: SignalComponent, children:
+            [
+                { path: "creation", component: CreationComponent },
+                { path: "todolist", component: TodoListComponent },
+                { path: "computedsignals", component: ComputedSignalsComponent },
+                { path: "effectsignals", component: EffectSignalsComponent },
+                { path: "untracksignals", component: UntrackSignalsComponent },
+                { path: "cartsignals", component: CartsignalComponent },
+                { path: "linkedsignals", component: LinkedSignalComponent },
+                { path: "obstosignal", component: ConvtObsToSignalComponent },
+                { path: "task2", component: Task2SignalComponent },
+            ]
+    },
+    {
+        path: "changeDetection", component: ChangeMainComponent, children: [
+            { path: "onpushstrategy", component: OnPushStrategyComponent },
+            { path: "cdref", component: CDRefComponent },
         ]
     },
     {
-        path:"changeDetection", component: ChangeMainComponent, children: [
-            {path:"onpushstrategy", component:OnPushStrategyComponent},
-            {path:"cdref", component:CDRefComponent},
-        ]
+        path: "tempform", loadComponent:
+            () => import('./comp/TemplateDrivenForms/simple-form/simple-form.component')
+                .then(m => m.SimpleFormComponent)
     },
     { path: "**", component: Comp404Component },
 ];
