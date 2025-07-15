@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   imports: [],
   templateUrl: './child.component.html',
-  styleUrl: './child.component.scss'
+  styleUrl: './child.component.scss',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ChildComponent {
 
@@ -14,6 +15,8 @@ export class ChildComponent {
     console.log('[Child Component] = ', this.count);
     return 20
   }
+
+  
 
   update(){
     this.count++

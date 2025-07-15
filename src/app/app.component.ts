@@ -55,4 +55,9 @@ export class AppComponent implements AfterViewInit {
     // this.selectedColor = this.colorInput.nativeElement.value
   }
 
+  get out(){
+    console.log('[App Component]  ' );
+    return 50
+  }
+
 }
