@@ -10,7 +10,7 @@ import { RouterOutlet } from "@angular/router";
 ],
   templateUrl: './change-main.component.html',
   styleUrl: './change-main.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChangeMainComponent implements OnInit {
 
@@ -29,7 +29,7 @@ export class ChangeMainComponent implements OnInit {
 
   get a() {
 
-    console.log('this.b = ', this.b);
+    console.log('[Change Main Component] = ',);
     return this.b
 
     this.zone.runOutsideAngular(() => console.log('a  ', this.a))
