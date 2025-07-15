@@ -36,6 +36,8 @@ import { CartsignalComponent } from './comp/Signals/cartsignal/cartsignal.compon
 import { LinkedSignalComponent } from './comp/Signals/linked-signal/linked-signal.component';
 import { ConvtObsToSignalComponent } from './comp/Signals/convt-obs-to-signal/convt-obs-to-signal.component';
 import { Task2SignalComponent } from './comp/Signals/task2-signal/task2-signal.component';
+import { ChangeMainComponent } from './comp/changeDetection/change-main/change-main.component';
+import { OnPushStrategyComponent } from './comp/changeDetection/on-push-strategy/on-push-strategy.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -91,6 +93,11 @@ export const routes: Routes = [
             { path: "linkedsignals", component: LinkedSignalComponent },
             { path: "obstosignal", component: ConvtObsToSignalComponent },
             { path: "task2", component: Task2SignalComponent },
+        ]
+    },
+    {
+        path:"changeDetection", component: ChangeMainComponent, children: [
+            {path:"onpushstrategy", component:OnPushStrategyComponent},
         ]
     },
     { path: "**", component: Comp404Component },
