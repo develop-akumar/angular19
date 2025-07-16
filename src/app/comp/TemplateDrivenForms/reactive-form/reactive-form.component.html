@@ -1,0 +1,34 @@
+<p>reactive-form works!</p>
+
+<h1>Form Control</h1>
+
+<input type="text" (input)="showStatus()" [formControl]="username">
+
+<h1>Reactive Forms</h1>
+
+<form [formGroup]="groupForm">
+    <div>
+        <input type="text" formControlName="username">
+    </div>
+</form>
+
+<h1>FormArray</h1>
+
+<form [formGroup]="groupForm2">
+    <div formArrayName="array">
+
+        @for(a of array.controls;track a; let i = $index){
+        <div>
+            <label for=""></label>
+            <input type="text" formControlName="subject">
+        </div>
+
+        <div>
+            <label for=""></label>
+            <input type="text" formControlName="marks">
+        </div>
+        }
+
+    </div>
+
+</form>

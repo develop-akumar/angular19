@@ -10,10 +10,10 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class SimpleFormComponent {
 
   user: { username: string } = { username: "" }
-
+  ramkishore: string = "ramkishore";
   onSubmit(form: NgForm) {
     if (form.valid) {
-      console.log('form is valid = ',form.value);
+      console.log('form is valid = ', form.value);
     }
   }
 

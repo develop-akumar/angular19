@@ -56,7 +56,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   get out(){
-    console.log('[App Component]  ' );
+    // console.log('[App Component]  ' );
     return 50
   }
 
