@@ -1,13 +1,13 @@
 <p>simple-form works!</p>
 
-<form action="" (ngSubmit)="onSubmit()" #form="ngForm">
+<form action="" (ngSubmit)="onSubmit(form)" #form="ngForm">
     <div>
         <label for="">Name</label>
-        <input type="text" name="name" id="name" ngModel>
+        <input type="text" name="namen" id="nameid" ngModel>
     </div>
     <div>
         <label for="">Password</label>
-        <input type="text" name="password" id="password" ngModel>
+        <input type="text" name="passwordn" id="passwordid" ngModel>
     </div>
     <div>
         <button type="submit">Submit</button>
