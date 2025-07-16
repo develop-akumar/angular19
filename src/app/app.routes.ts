@@ -39,6 +39,7 @@ import { Task2SignalComponent } from './comp/Signals/task2-signal/task2-signal.c
 import { ChangeMainComponent } from './comp/changeDetection/change-main/change-main.component';
 import { OnPushStrategyComponent } from './comp/changeDetection/on-push-strategy/on-push-strategy.component';
 import { CDRefComponent } from './comp/changeDetection/cdref/cdref.component';
+import { FormBuilderComponent } from './comp/TemplateDrivenForms/form-builder/form-builder.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -110,6 +111,9 @@ export const routes: Routes = [
     {
         path:"reactivefrom", loadComponent: ()=> import('./comp/TemplateDrivenForms/reactive-form/reactive-form.component')
         .then(m=> m.ReactiveFormComponent)
+    },
+    {
+        path:"formbuilder", component:FormBuilderComponent
     },
     { path: "**", component: Comp404Component },
 ];

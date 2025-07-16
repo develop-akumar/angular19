@@ -1,0 +1,26 @@
+<p>form-builder works!</p>
+
+<form [formGroup]="groupForm">
+    <div>
+        <input type="text" formControlName="username">
+    </div>
+
+     <div>
+        <input type="text" formControlName="password">
+    </div>
+    <div>
+        <button (click)="add()">Add</button>
+    </div>
+
+    <div formControlArray="array">
+        @for(item of array.controls;track item; let i = $index){
+        <br>
+        <div>
+            <input type="text" formControlName="subject">
+            <input type="text" formControlName="marks">
+            <button (click)="remove(i)">Remove</button>
+        </div>
+        }
+
+    </div>
+</form>
