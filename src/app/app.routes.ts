@@ -44,6 +44,7 @@ import { FormBuilderComponent } from './comp/TemplateDrivenForms/form-builder/fo
 // guards
 import { testGuard } from './guards/test.guard';
 import { formAwayGuard } from './guards/form-away.guard';
+import { childRouteGuard } from './guards/child-route.guard';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -59,8 +60,11 @@ export const routes: Routes = [
         ]
     },
     {
-        path: "work", component: WorkComponent, children: [
-            { path: "wchild1/:id/:name", component: Wc1Component },
+        path: "work", component: WorkComponent, 
+        canActivateChild:[childRouteGuard], 
+        canActivate:[testGuard],
+        children: [
+            { path: "wchild1/:id/:name", canActivate:[formAwayGuard], component: Wc1Component },
             { path: "wchild2", component: Wc2Component },
             { path: "**", component: Comp404Component }
         ]

@@ -7,12 +7,13 @@ export const formAwayGuard: CanDeactivateFn<AboutComponent> = (
   currentState, 
   nextState
 ) => {
+  console.log('[formAwayGuard] = ', );
   console.log('component.movingStatus = ', component.movingStatus);
   console.log('currentRoute = ', currentRoute);
   console.log('currentState = ', currentState);
   console.log('nextState = ', nextState);
-  if(component.movingStatus){
-    return true
-  }
-  return false;
+  // if(component.movingStatus){
+  //   return true
+  // }
+  return true;
 };
