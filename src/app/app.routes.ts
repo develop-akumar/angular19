@@ -43,12 +43,13 @@ import { FormBuilderComponent } from './comp/TemplateDrivenForms/form-builder/fo
 
 // guards
 import { testGuard } from './guards/test.guard';
+import { formAwayGuard } from './guards/form-away.guard';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
     { path: "home", component: BlankComponent },
     { path: "child", component: ChildCompComponent, canActivate:[testGuard] },
-    { path: "about", component: AboutComponent },
+    { path: "about", component: AboutComponent, canDeactivate:[formAwayGuard], data:["About Data"] },
     { path: "tokenInj", component: TokenInjectionComponent },
     {
         path: "news", component: NewsComponent,
