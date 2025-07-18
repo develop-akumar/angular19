@@ -41,10 +41,13 @@ import { OnPushStrategyComponent } from './comp/changeDetection/on-push-strategy
 import { CDRefComponent } from './comp/changeDetection/cdref/cdref.component';
 import { FormBuilderComponent } from './comp/TemplateDrivenForms/form-builder/form-builder.component';
 
+// guards
+import { testGuard } from './guards/test.guard';
+
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
     { path: "home", component: BlankComponent },
-    { path: "child", component: ChildCompComponent },
+    { path: "child", component: ChildCompComponent, canActivate:[testGuard] },
     { path: "about", component: AboutComponent },
     { path: "tokenInj", component: TokenInjectionComponent },
     {
