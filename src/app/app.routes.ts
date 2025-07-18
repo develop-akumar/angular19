@@ -35,6 +35,11 @@ import { UntrackSignalsComponent } from './comp/Signals/untrack-signals/untrack-
 import { CartsignalComponent } from './comp/Signals/cartsignal/cartsignal.component';
 import { LinkedSignalComponent } from './comp/Signals/linked-signal/linked-signal.component';
 import { ConvtObsToSignalComponent } from './comp/Signals/convt-obs-to-signal/convt-obs-to-signal.component';
+import { Task2SignalComponent } from './comp/Signals/task2-signal/task2-signal.component';
+import { ChangeMainComponent } from './comp/changeDetection/change-main/change-main.component';
+import { OnPushStrategyComponent } from './comp/changeDetection/on-push-strategy/on-push-strategy.component';
+import { CDRefComponent } from './comp/changeDetection/cdref/cdref.component';
+import { FormBuilderComponent } from './comp/TemplateDrivenForms/form-builder/form-builder.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -79,17 +84,36 @@ export const routes: Routes = [
 
     // Signal
     {
-        path: "signal", component: SignalComponent, children: 
-        [
-            { path: "creation", component: CreationComponent },
-            { path: "todolist", component: TodoListComponent },
-            { path: "computedsignals", component: ComputedSignalsComponent },
-            { path: "effectsignals", component: EffectSignalsComponent },
-            { path: "untracksignals", component: UntrackSignalsComponent },
-            { path: "cartsignals", component: CartsignalComponent },
-            { path: "linkedsignals", component: LinkedSignalComponent },
-            { path: "obstosignal", component: ConvtObsToSignalComponent },
+        path: "signal", component: SignalComponent, children:
+            [
+                { path: "creation", component: CreationComponent },
+                { path: "todolist", component: TodoListComponent },
+                { path: "computedsignals", component: ComputedSignalsComponent },
+                { path: "effectsignals", component: EffectSignalsComponent },
+                { path: "untracksignals", component: UntrackSignalsComponent },
+                { path: "cartsignals", component: CartsignalComponent },
+                { path: "linkedsignals", component: LinkedSignalComponent },
+                { path: "obstosignal", component: ConvtObsToSignalComponent },
+                { path: "task2", component: Task2SignalComponent },
+            ]
+    },
+    {
+        path: "changeDetection", component: ChangeMainComponent, children: [
+            { path: "onpushstrategy", component: OnPushStrategyComponent },
+            { path: "cdref", component: CDRefComponent },
         ]
+    },
+    {
+        path: "tempform", loadComponent:
+            () => import('./comp/TemplateDrivenForms/simple-form/simple-form.component')
+                .then(m => m.SimpleFormComponent)
+    },
+    {
+        path:"reactivefrom", loadComponent: ()=> import('./comp/TemplateDrivenForms/reactive-form/reactive-form.component')
+        .then(m=> m.ReactiveFormComponent)
+    },
+    {
+        path:"formbuilder", component:FormBuilderComponent
     },
     { path: "**", component: Comp404Component },
 ];

@@ -1,0 +1,33 @@
+<p>task2-signal works!</p>
+
+<div>
+    <section>
+        <select name="" id="" [(ngModel)]="selectedCategory" (change)="onOptionSelect($event)">
+            @for(cat of categories; track $index){
+            <option [value]="cat">{{cat}}</option>
+            }
+
+        </select>
+        <br>
+        <div>
+            <label for="search">Search text</label> :   
+            <input name="search" type="text" placeholder="Enter search ..." (input)="onSearchText($event)" [(ngModel)]="searchText">
+        </div>
+    </section>
+
+    <br>
+
+    <section>
+
+        <ul>
+            @for (item of filteredItems(); track $index) {
+            <li>{{item.title}}</li>
+            }@empty {
+            <p>No items found.</p>
+            }
+        </ul>
+
+
+
+    </section>
+</div>
