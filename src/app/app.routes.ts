@@ -114,7 +114,7 @@ export const routes: Routes = [
     {
         path: "tempform", loadComponent:
             () => import('./comp/TemplateDrivenForms/simple-form/simple-form.component')
-                .then(m => m.SimpleFormComponent)
+                .then(m => m.SimpleFormComponent), data:{preload:true}
     },
     {
         path:"reactivefrom", loadComponent: ()=> import('./comp/TemplateDrivenForms/reactive-form/reactive-form.component')

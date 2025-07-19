@@ -4,13 +4,15 @@ import { NoPreloading, PreloadAllModules, provideRouter, withPreloading } from '
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
+import { CustomPreLoadingStrategy } from './preloadingStrategy/customPreLoadingStrategy';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, withPreloading(
       // PreloadAllModules,
-      NoPreloading
+      // NoPreloading,
+      CustomPreLoadingStrategy
     )  ),
     // This is used to make HTTP requests
     // It is necessary for making API calls in the application
