@@ -45,6 +45,7 @@ import { FormBuilderComponent } from './comp/TemplateDrivenForms/form-builder/fo
 import { testGuard } from './guards/test.guard';
 import { formAwayGuard } from './guards/form-away.guard';
 import { childRouteGuard } from './guards/child-route.guard';
+import { DeferComponent } from './comp/defer/defer.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -122,6 +123,9 @@ export const routes: Routes = [
     },
     {
         path:"formbuilder", component:FormBuilderComponent
+    },
+    {
+        path:"defer", component:DeferComponent
     },
     { path: "**", component: Comp404Component },
 ];

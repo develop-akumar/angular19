@@ -1,0 +1,20 @@
+<p>defer works!</p>
+
+
+@defer(){
+    <h2>I am defer content</h2>
+}
+
+@placeholder(minimum 3s) {
+    <h1>Content is Placeholder</h1>
+}
+
+
+@loading(after 4s; minimum 5s) {
+    <h1>I am loading block</h1>
+}
+
+
+@error {
+    <h1>Some error occurred</h1>
+}
