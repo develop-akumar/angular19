@@ -1,10 +1,13 @@
 <p>defer-trigger works!</p>
 
-@defer(){
+
+
+<div #showcontent>
+    @defer(on viewport(showcontent)){
     <h1>i am defer content</h1>
-} 
+    }
 
-@placeholder(minimum 2s){
-    <h2>placeholder content</h2>
-}
-
+    @loading(minimum 2s){
+    <h2>loading content</h2>
+    }
+</div>
