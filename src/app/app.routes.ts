@@ -46,6 +46,7 @@ import { testGuard } from './guards/test.guard';
 import { formAwayGuard } from './guards/form-away.guard';
 import { childRouteGuard } from './guards/child-route.guard';
 import { DeferComponent } from './comp/defer/defer.component';
+import { DeferTriggerComponent } from './comp/defer-trigger/defer-trigger.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: "full" },
@@ -127,5 +128,6 @@ export const routes: Routes = [
     {
         path:"defer", component:DeferComponent
     },
+    { path:"defertriggers", component : DeferTriggerComponent},
     { path: "**", component: Comp404Component },
 ];
