@@ -7,7 +7,32 @@
     <h1>i am defer content</h1>
     }
 
-    @loading(minimum 2s){
+    @loading(minimum 3s){
     <h2>loading content</h2>
     }
 </div>
+
+
+<!-- On Interaction -->
+
+<button #showc1>Render</button>
+
+@defer (on interaction(showc1)) {
+    <h1>I am c1</h1>
+}
+
+@placeholder(minimum 3s) {
+    <h2>placeholder</h2>
+}
+
+<!-- On hover -->
+
+<button #showc1>Render</button>
+
+@defer (on hover(showc1)) {
+    <h1>I am c1</h1>
+}
+
+@placeholder(minimum 3s) {
+    <h2>placeholder</h2>
+}
