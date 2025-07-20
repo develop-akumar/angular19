@@ -48,6 +48,10 @@
     <h1>I am on timer trigger</h1>
  }
 
- 
+ <!-- prefetch -->
+  @defer (on interaction(showcontent); prefetch on interaction(showcontent)) {
+    <h1>I am prefetch</h1>
+  }
+
 
 
